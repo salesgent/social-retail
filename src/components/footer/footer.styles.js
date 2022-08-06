@@ -10,7 +10,7 @@ import { Stack } from "@mui/material";
 
 export const FooterSection = styled.section`
   width: 100%;
-  background-color: #df363e;
+  background-color: ${(props) => props.theme.palette.bg.main};
   display: flex;
   display: grid;
   place-items: center;
@@ -25,7 +25,6 @@ export const FooterSection = styled.section`
 `;
 export const FooterBox = styled.div`
   width: 100%;
-  background-color: #df363e;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,17 +38,15 @@ export const FooterBox = styled.div`
 export const FooterContainer = styled.div`
   width: 100%;
   max-width: ${(props) => props.theme.maxWidth.home};
-  background-color: #df363e;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   /* max-width: 1650px; */
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0;
   padding-bottom: 2rem;
   @media screen and (max-width: 768px) {
-    padding: 0;
     max-width: 100vw;
   }
 `;
@@ -85,7 +82,7 @@ export const SubscribeInput = styled.div`
     height: 100%;
     /* opacity: ${(props) => (props.active ? 1 : 0.7)}; */
     cursor: ${(props) => (props.active ? "pointer" : "not-allowed")};
-    background-color: #00fc41;
+    background-color: ${(props) => props.theme.palette.bg.secondary};
     width: 40%;
     color: #2a0f3f;
     font-weight: 800;
@@ -174,16 +171,15 @@ export const FooterLinksBox = styled(motion.div)`
   }
 `;
 export const FooterText = styled(BodyText)`
-  font-weight: 200;
-  font-family: ${(props) => props.fontFamily || "josefin-sans"};
+  font-weight: 250;
+  font-family: ${(props) => props.fontFamily || "Qanelas"};
   margin: ${(props) => props.margin};
 `;
 
 const LinkText = styled(FooterText)`
   text-transform: uppercase;
   font-weight: ${(props) => props?.fontWeight};
-  font-family: ${(props) =>
-    props.fontWeight === "800" ? "Qanales" : "josefin-sans"};
+  font-family: "Qanelas";
   cursor: pointer;
   transition: 0.5s;
   margin-bottom: 0rem;

@@ -32,7 +32,6 @@ const Footer = () => {
               SUBSCRIBE TO OUR
             </FooterText>
             <FooterHeading
-              fontFamily="Qanelas"
               fontSize="47px"
               fontSizesm="32px"
               margin="0 0  .5rem 0"
@@ -55,7 +54,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
             >
-              <FooterHeading fontFamily="Qanelas">shop</FooterHeading>
+              <FooterHeading>shop</FooterHeading>
               {links1.map((link, i) => (
                 <FooterLink margin="0" key={i} url={link.url}>
                   {link.alias}
@@ -67,7 +66,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8, ease: "easeInOut" }}
             >
-              <FooterHeading fontFamily="Qanelas">get inspired</FooterHeading>
+              <FooterHeading>get inspired</FooterHeading>
               {links2.map((link, i) => (
                 <FooterLink key={i} url={link.url} margin="0.5rem 0">
                   {link.alias}
@@ -79,7 +78,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2, ease: "easeInOut" }}
             >
-              <FooterHeading fontFamily="Qanelas">Follow us</FooterHeading>
+              <FooterHeading>Follow us</FooterHeading>
 
               <FooterText marginBottom="0rem">SALES INQUIRY</FooterText>
               <FooterLink url={"/"} fontWeight="800">

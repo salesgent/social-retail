@@ -20,7 +20,7 @@ const theme = {
     h2: {
       fontSize: "30px",
       fontWeight: "700",
-      fontFamily: "Jost-fonts",
+      fontFamily: "Qanelas",
       fontSizeSm: "24px",
     },
     body: {
