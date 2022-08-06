@@ -120,8 +120,8 @@ export const NavButton = styled.div`
   }
 `;
 
-export const HomeButton = styled.div`
-  width: 37.18rem;
+export const HomeButton = styled.button`
+  width: ${(props) => props.width || "37.18rem"};
   height: 5.68rem;
   display: grid;
   place-items: center;
@@ -132,4 +132,12 @@ export const HomeButton = styled.div`
   background: ${(props) => props.theme.palette.bg.secondary};
   text-transform: uppercase;
   margin-bottom: 2em;
+  transition: 0.4s;
+  cursor: pointer;
+  border: none;
+  z-index: 1;
+  &:hover {
+    opacity: 0.8;
+    letter-spacing: 1px;
+  }
 `;

@@ -2,7 +2,7 @@ const theme = {
   palette: {
     colors: {
       main: "white",
-      secondary: "black",
+      secondary: "#050505",
       other: "#0D3A27",
     },
     bg: {
