@@ -21,12 +21,7 @@ import Banners from "../src/components/home/Banners/Banners";
 import Header from "../src/components/Header/Header";
 import LandingCarousel from "../src/components/home/LandingCarousel/LandingCarousel";
 
-/////styles
-const TopSection = styled.div`
-  width: 100%;
-  height: 80vh;
-  background-color: #df363e;
-`;
+
 export default function Home() {
   
   return (

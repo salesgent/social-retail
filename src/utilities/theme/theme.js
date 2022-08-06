@@ -3,24 +3,25 @@ const theme = {
     colors: {
       main: "white",
       secondary: "black",
+      other: "#0D3A27",
     },
     bg: {
-      main: "#DF363E",
-      secondary: "#00FC41",
+      main: "#050505",
+      secondary: "#A2DAC2",
     },
   },
   typography: {
     h1: {
-      fontSize: "60px",
+      fontSize: "67px",
       fontWeight: "700",
       fontFamily: "Jost-fonts",
-      fontSizeSm: "38px",
+      fontSizeSm: "42px",
     },
     h2: {
       fontSize: "30px",
-      fontWeight: "800",
+      fontWeight: "700",
       fontFamily: "Jost-fonts",
-      fontSizeSm: "25px",
+      fontSizeSm: "24px",
     },
     body: {
       fontSize: "22px",
@@ -30,7 +31,7 @@ const theme = {
     },
   },
   maxWidth: {
-    home: "1650px",
+    home: "1580px",
     productslist: "1710px",
     productDetails: "1710px",
   },
