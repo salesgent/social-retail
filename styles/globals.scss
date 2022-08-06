@@ -1,0 +1,117 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  /* font-family: "Poppins", sans-serif; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+*::selection {
+  background: #00fc41;
+}
+
+///navbody and background heading fonts
+@font-face {
+  font-family: "Jost-fonts";
+  src: url(../font/jost/Jost-Light-300.ttf) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Jost-fonts";
+  src: url(../font/jost/Jost-SemiBold-600.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Jost-fonts";
+  src: url(../font/jost/Jost-Bold-700.ttf) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Jost-fonts";
+  src: url(../font/jost/Jost-Regular-400.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Jost-fonts";
+  src: url(../font/jost/Jost-Medium-500.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Jost-fonts";
+  src: url(../font/jost/Jost-Black-900.ttf) format("truetype");
+  font-weight: 900;
+}
+///////////footer fonts///////
+
+
+@font-face {
+  font-family: "Qanelas";
+  src: url(../font/QanelasSoftDEMO/QanelasSoftDEMO-ExtraBold.otf)
+    format("opentype");
+  font-weight: 800;
+}
+
+
+
+/////
+.products-home-container .swiper-slide-active .product-card {
+  /* transform: scale(1.1) !important; */
+  height: 473px;
+  width: 304px;
+  opacity: 1 !important;
+  z-index: 2;
+  margin: 0;
+  @media only screen and (max-width: 748px) {
+    height: 383px;
+    width: 244px;
+  }
+}
+/* ////////////home carousel///// */
+.homeCarousel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .swiper-pagination {
+    display: none;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    // color: #df363e !important;
+    color: black !important;
+  }
+}
+@media only screen and (max-width: 640px) {
+  //   .swiper-pagination-bullet,
+  //   .swiper-pagination-bullet-active {
+  //     width: 4px;
+  //     height: 4px;
+
+  //   }
+  // }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 35%;
+    // color: #df363e !important;
+    color: black !important;
+    &::after {
+      font-size: 35px !important;
+    }
+  }
+}
+
+// .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+//     color: #000000;
+// }
