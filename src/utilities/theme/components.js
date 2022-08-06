@@ -4,7 +4,7 @@ import { Button, Typography } from "@mui/material";
 export const H1 = styled(Typography)`
   font-size: ${(props) => props.fontSize || props.theme.typography.h1.fontSize};
   font-weight: ${(props) => props.theme.typography.h1.fontWeight};
-  color: ${(props) => props.theme.palette.colors.main};
+  color: ${(props) => props.theme.palette.colors.secondary};
   text-transform: uppercase;
   font-family: ${(props) =>
     props.fontFamily || props.theme.typography.h1.fontFamily};

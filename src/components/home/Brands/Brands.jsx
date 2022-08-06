@@ -19,22 +19,22 @@ const SwiperContainer = styled(Swiper)`
   max-width: 1200px;
 `;
 const BrandImg = styled.img`
-  width: 218px;
+  width: 100%;
   height: 69px;
   object-fit: cover;
   margin: auto;
 `;
 const BrandCarousel = () => {
   const Brands = [
-    { img: "/images/brands/icon-1.png" },
-    { img: "/images/brands/icon-2.png" },
-    { img: "/images/brands/icon-3.png" },
-    { img: "/images/brands/icon-1.png" },
-    { img: "/images/brands/icon-2.png" },
-    { img: "/images/brands/icon-3.png" },
-    { img: "/images/brands/icon-1.png" },
-    { img: "/images/brands/icon-2.png" },
-    { img: "/images/brands/icon-3.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
+    { img: "/images/brands/brand.png" },
   ];
 
   return (
@@ -44,18 +44,18 @@ const BrandCarousel = () => {
           delay: 5000,
           disableOnInteraction: false,
         }}
+        loop={true}
         breakpoints={{
           9: {
             slidesPerView: 1,
           },
           654: {
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           950: {
-            slidesPerView: 3,
+            slidesPerView: 1,
           },
         }}
-        // spaceBetween={10}
         navigation={false}
       >
         {Brands.map((brand, i) => (

@@ -18,12 +18,10 @@ const ProductSlider = dynamic(
   { ssr: false }
 );
 import Banners from "../src/components/home/Banners/Banners";
-import Header from "../src/components/Header/Header";
 import LandingCarousel from "../src/components/home/LandingCarousel/LandingCarousel";
-
+import OfferBanner from "../src/components/home/OfferBanner/OfferBanner";
 
 export default function Home() {
-  
   return (
     <div>
       <Head>
@@ -34,12 +32,9 @@ export default function Home() {
 
       <main>
         <LandingCarousel />
+        <OfferBanner color="black" />
         <BrandCarousel />
         <ProductSlider />
-        {/* <Banners1 /> */}
-        {/* <Banners1 />
-        <Banners2 />
-        <Banners3 /> */}
         <Banners />
       </main>
     </div>

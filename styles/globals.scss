@@ -17,9 +17,10 @@ a {
   padding: 0;
   margin: 0;
   font-weight: 400;
+  font-family: "Jost-fonts";
 }
 *::selection {
-  background: #00fc41;
+  // background: #00fc41;
 }
 
 ///navbody and background heading fonts
@@ -55,15 +56,12 @@ a {
 }
 ///////////footer fonts///////
 
-
 @font-face {
   font-family: "Qanelas";
   src: url(../font/QanelasSoftDEMO/QanelasSoftDEMO-ExtraBold.otf)
     format("opentype");
   font-weight: 800;
 }
-
-
 
 /////
 .products-home-container .swiper-slide-active .product-card {
@@ -94,7 +92,6 @@ a {
   }
 }
 @media only screen and (max-width: 640px) {
-
   .swiper-button-prev,
   .swiper-button-next {
     top: 35%;

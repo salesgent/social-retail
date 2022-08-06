@@ -5,7 +5,7 @@ import { Swiper } from "swiper/react";
 export const ProductsContainer = styled(Stack)`
   width: 100%;
   min-height: 931px;
-  background: #222222;
+  /* background: #222222; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -118,4 +118,18 @@ export const NavButton = styled.div`
   @media screen and (max-width: 768px) {
     margin: ${(props) => props.marginSmall};
   }
+`;
+
+export const HomeButton = styled.div`
+  width: 37.18rem;
+  height: 5.68rem;
+  display: grid;
+  place-items: center;
+  color: black;
+  font-weight: bold;
+  font-size: 1.875rem;
+  border-radius: 3rem;
+  background: ${(props) => props.theme.palette.bg.secondary};
+  text-transform: uppercase;
+  margin-bottom: 2em;
 `;

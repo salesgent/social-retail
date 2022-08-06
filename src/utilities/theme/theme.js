@@ -7,7 +7,7 @@ const theme = {
     },
     bg: {
       main: "#050505",
-      secondary: "#A2DAC2",
+      secondary: "#B7E8D3",
     },
   },
   typography: {

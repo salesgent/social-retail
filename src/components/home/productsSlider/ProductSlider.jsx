@@ -1,7 +1,6 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import React from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
-
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 /////////
 import {
@@ -11,6 +10,7 @@ import {
   ProductsContainer,
   ProductSwiperContainer,
   ImageBox,
+  HomeButton,
 } from "./product.style";
 import Image from "next/image";
 import { H1 } from "../../../utilities/theme/components";
@@ -26,10 +26,8 @@ const ProductSlider = () => {
       alignItems="center"
       className="products-home-container"
     >
-      <h6>fly high</h6>
-      <H1 margin="0rem 0 -1rem 0" style={{ textAlign: "center" }}>
-        Curated Collections
-      </H1>
+      <h6>new arrivals</h6>
+      <H1 margin="0rem 0 -1rem 0">every week</H1>
       <ProductSwiperContainer
         autoplay={{
           delay: 6500,
@@ -118,6 +116,9 @@ const ProductSlider = () => {
           </SwiperSlide>
         ))}
       </ProductSwiperContainer>
+      <HomeButton>
+        shop by collection
+      </HomeButton>
     </ProductsContainer>
   );
 };
