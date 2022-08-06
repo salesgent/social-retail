@@ -18,7 +18,11 @@ const ProductSlider = dynamic(
   { ssr: false }
 );
 import LandingCarousel from "../src/components/home/LandingCarousel/LandingCarousel";
-import OfferBanner from "../src/components/home/OfferBanner/OfferBanner";
+const OfferBanner = dynamic(
+  () => import("../src/components/home/OfferBanner/OfferBanner"),
+  { ssr: false }
+);
+// import OfferBanner from "../src/components/home/OfferBanner/OfferBanner";
 import Banner from "../src/components/home/Banner/Banner";
 
 export default function Home() {
@@ -35,7 +39,7 @@ export default function Home() {
         <OfferBanner color="black" />
         <BrandCarousel />
         <ProductSlider />
-        <Banner/>
+        <Banner />
       </main>
     </div>
   );

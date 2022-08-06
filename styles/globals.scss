@@ -62,6 +62,12 @@ a {
     format("opentype");
   font-weight: 800;
 }
+@font-face {
+  font-family: "Qanelas";
+  src: url(../font/QanelasSoftDEMO/QanelasSoftDEMO-UltraLight.otf)
+    format("opentype");
+  font-weight: 250;
+}
 
 /////
 .products-home-container .swiper-slide-active .product-card {

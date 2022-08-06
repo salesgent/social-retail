@@ -77,6 +77,12 @@ export const BannerButton = styled.button`
   font-weight: 700;
   font-size: 2.2rem;
   margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+  &:hover {
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
 `;
 
 export const ImgBox = styled.div`
