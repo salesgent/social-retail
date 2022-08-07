@@ -45,6 +45,14 @@ export const ProductName = styled.h4`
   margin: 0.5em 0;
   margin-top: 0.3rem;
   letter-spacing: 0.02em;
+  line-height: 2.1rem;
+  max-height: 4.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (max-width: 640px) {
+    min-width: 10ch;
+    max-width: 14ch;
+  }
 `;
 
 export const ProductPrice = styled.div`
@@ -79,11 +87,15 @@ export const Button = styled(motion.button)`
   color: white;
   font-weight: 500;
   letter-spacing: 1px;
+  font-size: 1rem;
   cursor: pointer;
   &:hover,
   &:focus {
     outline: none;
     border: none;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 0.9rem;
   }
 `;
 

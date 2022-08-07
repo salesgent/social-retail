@@ -9,7 +9,7 @@ import Header from "../Header/Header";
 
 const Layout = ({ children }) => {
   return (
-    <Stack sx={{ width: "100%" }} flexDirection="column">
+    <Stack sx={{ width: "100%", overflow: "hidden" }} flexDirection="column">
       <Header />
       {children}
       <FooterTop />

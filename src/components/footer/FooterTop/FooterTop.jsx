@@ -7,7 +7,7 @@ const Container = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
-  height: 18rem;
+  min-height: 18rem;
   background-color: ${(props) => props.theme.palette.bg.main};
 `;
 const Box = styled.div`
@@ -15,10 +15,14 @@ const Box = styled.div`
   max-width: ${(props) => props.theme.maxWidth.home};
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid #b6b6b6;
   height: 100%;
+  @media only screen and (max-width: 840px) {
+    padding-bottom: 2em;
+  }
 `;
 const IconBox = styled.div`
   display: flex;
@@ -28,9 +32,13 @@ const IconBox = styled.div`
   color: white;
   h6 {
     font-size: 1.565rem;
+    letter-spacing: 0.05em;
     font-weight: 800;
     font-family: "Qanelas";
     text-transform: capitalize;
+    @media only screen and (max-width: 840px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 const FooterTop = () => {

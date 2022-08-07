@@ -14,17 +14,18 @@ export const ProductsContainer = styled(Stack)`
   justify-content: flex-start;
   h6 {
     color: #639c84;
-    font-size: 34px;
+    font-size: 2.1rem;
     font-weight: 400;
     margin-top: 1em;
-    margin-bottom: .1em;
+    margin-bottom: 0.1em;
     text-transform: uppercase;
     font-family: ${(props) => props.theme.typography.h1.fontFamily};
   }
   @media only screen and (max-width: 748px) {
-    min-height: 650px;
+    /* min-height: 650px; */
     h6 {
       margin-top: 20px;
+      font-size: 1.7rem;
     }
   }
 `;
@@ -39,7 +40,8 @@ export const ProductSwiperContainer = styled(Swiper)`
   margin: 5em 0;
 
   @media only screen and (max-width: 748px) {
-    margin: 1rem 0;
+    margin: 2.8em 0;
+    margin-top: 3.8rem;
   }
   /* max-width: 290px;
   overflow: visible; */
@@ -84,6 +86,12 @@ export const Button = styled(motion.button)`
   cursor: pointer;
   border: none;
   z-index: 1;
+  @media only screen and (max-width: 748px) {
+    width: 19rem;
+    font-size: 1.1rem;
+    height: 4.4rem;
+    max-width: 80%;
+  }
 `;
 
 export const HomeButton = ({ children, ...props }) => {

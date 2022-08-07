@@ -15,7 +15,7 @@ const theme = {
       fontSize: "4.25rem",
       fontWeight: "700",
       fontFamily: "Jost-fonts",
-      fontSizeSm: "42px",
+      fontSizeSm: "2.67rem",
     },
     h2: {
       fontSize: "1.92rem",

@@ -29,7 +29,9 @@ const ProductSlider = () => {
       className=" homeCarousel"
     >
       <h6>new arrivals</h6>
-      <H1 margin="0rem 0 -1rem 0">every week</H1>
+      <H1 margin="0rem 0 -1rem 0" variant="h4">
+        every week
+      </H1>
       <ProductSwiperContainer
         autoplay={{
           delay: 6500,
@@ -44,7 +46,7 @@ const ProductSlider = () => {
           854: {
             slidesPerView: 2,
           },
-          1050: {
+          1560: {
             slidesPerView: 3,
           },
           // 1150: {

@@ -20,4 +20,11 @@ export const BannerText = styled.div`
   border-bottom: 2px solid #366551;
   font-weight: bold;
   font-family: "jost-fonts";
+  text-align: center;
+  @media only screen and (max-width: 786px) {
+    font-size: 1.6rem;
+  }
+  @media only screen and (max-width: 524px) {
+    font-size: 1.2rem;
+  }
 `;
