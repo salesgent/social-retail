@@ -69,9 +69,10 @@ export const HeaderNav = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 300px;
-  @media only screen and (max-width: 2030px) {
+  justify-content: flex-start;
+  width: 325px;
+  margin-left: -4em;
+  @media only screen and (max-width: 1680px) {
     display: none;
   }
 `;
@@ -98,6 +99,27 @@ export const HeaderLink = styled.a`
     opacity: 0.8;
   }
   @media only screen and (max-width: 640px) {
+    display: none;
+  }
+`;
+
+export const MenuIcon = styled.div`
+  width: ${(props) => props.width || "66px"};
+  height: ${(props) => props.height || "66px"};
+  background: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 46px;
+  justify-self: flex-end;
+  cursor: pointer;
+  margin-left: ${(props) => props.marginLeft};
+  @media screen and (max-width: 1089px) {
+    width: 54px;
+    height: 54px;
+    font-size: 26px;
+  }
+  @media only screen and (min-width: 1680px) {
     display: none;
   }
 `;

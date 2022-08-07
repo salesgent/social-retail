@@ -87,9 +87,7 @@ const Header = () => {
             />
           </Icon>
 
-          <Badge badgeContent={cartQt} color="secondary"
-            showZero={true}
-          >
+          <Badge badgeContent={cartQt} color="secondary" showZero={true}>
             <Icon>
               <Image
                 src="/images/header/cart-icon.png"
@@ -98,6 +96,14 @@ const Header = () => {
               />
             </Icon>
           </Badge>
+          <MenuIcon onClick={() => setOpen(true)} marginLeft=".4em">
+            <Image
+              src="/images/header/menu-icon.png"
+              alt="login"
+              width={103}
+              height={103}
+            />
+          </MenuIcon>
         </IconsContainer>
       </HeaderContainer>
     </HeaderSection>
