@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const BannerSection = styled.section`
   width: 100%;
@@ -10,8 +11,6 @@ export const BannerSection = styled.section`
 
 export const BannerContainer = styled.div`
   width: 100%;
-  /* height: 42.187rem; */
-  /* max-width: ${(props) => props.theme.maxWidth.home}; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -24,10 +23,10 @@ export const BannerBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: ${(props) => props.placeItems || "flex-end"};
-  height: 58.737rem;
+  height: 59.737rem;
 `;
 
-export const BannerImg = styled.div`
+export const BannerImg = styled(motion.div)`
   width: 100%;
 
   display: flex;
@@ -79,13 +78,14 @@ export const BannerButton = styled.button`
   margin: 0 1rem;
   cursor: pointer;
   transition: all 0.4s;
+  margin-top: 1em;
   &:hover {
     letter-spacing: 1px;
     opacity: 0.8;
   }
 `;
 
-export const ImgBox = styled.div`
+export const ImgBox = styled(motion.div)`
   width: 49.6rem;
   max-width: 100%;
   min-height: 49rem;

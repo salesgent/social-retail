@@ -7,7 +7,7 @@ const Container = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
-  height: 24rem;
+  height: 18rem;
   background-color: ${(props) => props.theme.palette.bg.main};
 `;
 const Box = styled.div`

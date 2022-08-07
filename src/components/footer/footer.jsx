@@ -27,6 +27,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
+        
           >
             <FooterText margin="0" fontSize="31px">
               SUBSCRIBE TO OUR

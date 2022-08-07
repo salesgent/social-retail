@@ -1,17 +1,18 @@
 import { Stack } from "@mui/material";
+import dynamic from "next/dynamic";
 import React from "react";
 import Footer from "../footer/footer";
-import FooterTop from "../footer/FooterTop/FooterTop";
+const FooterTop = dynamic(() => import("../footer/FooterTop/FooterTop"), {
+  ssr: false,
+});
 import Header from "../Header/Header";
 
-
 const Layout = ({ children }) => {
-
   return (
     <Stack sx={{ width: "100%" }} flexDirection="column">
-      <Header/>
+      <Header />
       {children}
-      <FooterTop/>
+      <FooterTop />
       <Footer />
     </Stack>
   );

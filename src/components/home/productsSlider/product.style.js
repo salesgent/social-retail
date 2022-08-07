@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Stack } from "@mui/material";
 import { Swiper } from "swiper/react";
+import { motion } from "framer-motion";
 
 export const ProductsContainer = styled(Stack)`
   width: 100%;
@@ -120,7 +121,7 @@ export const NavButton = styled.div`
   }
 `;
 
-export const HomeButton = styled.button`
+export const Button = styled(motion.button)`
   width: ${(props) => props.width || "37.18rem"};
   height: 5.68rem;
   display: grid;
@@ -132,12 +133,20 @@ export const HomeButton = styled.button`
   background: ${(props) => props.theme.palette.bg.secondary};
   text-transform: uppercase;
   margin-bottom: 2em;
-  transition: 0.4s;
+  /* transition: 0.4s; */
   cursor: pointer;
   border: none;
   z-index: 1;
-  &:hover {
-    opacity: 0.8;
-    letter-spacing: 1px;
-  }
 `;
+
+export const HomeButton = ({ children, ...props }) => {
+  return (
+    <Button
+      whileHover={{ scale: 1.1 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      {...props}
+    >
+      {children}
+    </Button>
+  );
+};
