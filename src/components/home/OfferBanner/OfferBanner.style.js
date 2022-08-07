@@ -6,6 +6,9 @@ export const BannerBackground = styled.div`
   background: ${(props) => props.theme.palette.bg.secondary};
   display: grid;
   place-items: center;
+  @media only screen and (max-width: 624px) {
+    height: 4.58rem;
+  }
 `;
 
 export const BannerText = styled.div`
@@ -24,7 +27,8 @@ export const BannerText = styled.div`
   @media only screen and (max-width: 786px) {
     font-size: 1.6rem;
   }
-  @media only screen and (max-width: 524px) {
-    font-size: 1.2rem;
+  @media only screen and (max-width: 624px) {
+    font-size: 1.3rem;
+    height: 4.58rem;
   }
 `;

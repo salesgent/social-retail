@@ -9,6 +9,10 @@ const Container = styled.div`
   place-items: center;
   min-height: 18rem;
   background-color: ${(props) => props.theme.palette.bg.main};
+  /* @media only screen and (max-width: 840px) {
+    min-height: 14rem;
+    height: 14rem;
+  } */
 `;
 const Box = styled.div`
   width: 100%;
@@ -50,7 +54,7 @@ const FooterTop = () => {
             <Image
               width={150}
               height={150}
-              layout="fixed"
+              layout="intrinsic"
               src={icon.img}
               alt="icon"
             />
