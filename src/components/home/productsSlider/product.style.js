@@ -13,7 +13,7 @@ export const ProductsContainer = styled(Stack)`
   align-items: center;
   justify-content: flex-start;
   h6 {
-    color: ${(props) => props.theme.palette.bg.secondary};
+    color: #639c84;
     font-size: 34px;
     font-weight: 400;
     margin-top: 80px;

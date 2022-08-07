@@ -27,7 +27,7 @@ const IconBox = styled.div`
   align-items: center;
   color: white;
   h6 {
-    font-size: 1.1rem;
+    font-size: 1.565rem;
     font-weight: 800;
     font-family: "Qanelas";
     text-transform: capitalize;
@@ -40,8 +40,8 @@ const FooterTop = () => {
         {iconsData.map((icon, i) => (
           <IconBox key={i}>
             <Image
-              width={93}
-              height={93}
+              width={150}
+              height={150}
               layout="fixed"
               src={icon.img}
               alt="icon"

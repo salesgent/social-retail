@@ -36,7 +36,8 @@ export const BannerImg = styled(motion.div)`
   height: 100%;
   /* position: relative; */
   color: white;
-  padding: 2.5em;
+
+  padding: ${(props) => props.padding || "5.5em 3.5em"};
   /* padding-top: 6em; */
   padding-bottom: 0;
   position: relative;
@@ -49,7 +50,7 @@ export const BannerImg = styled(motion.div)`
     font-size: 1.812rem;
     font-weight: 400;
     line-height: 3rem;
-    margin: 2em 0;
+    margin: 1.5em 0;
     z-index: 1;
   }
   .bg {
@@ -86,7 +87,7 @@ export const BannerButton = styled.button`
 `;
 
 export const ImgBox = styled(motion.div)`
-  width: 49.6rem;
+  width: 52.6rem;
   max-width: 100%;
   min-height: 49rem;
   position: relative;

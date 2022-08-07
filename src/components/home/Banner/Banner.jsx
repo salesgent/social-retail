@@ -23,6 +23,7 @@ const Banner = () => {
           <BannerImg
             alignItems="flex-end"
             ref={ref}
+            padding="0"
             initial={{ opacity: 0, x: -260 }}
             animate={InView ? { opacity: 1, x: 0 } : {}}
             transition={{
