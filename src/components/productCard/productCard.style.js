@@ -1,194 +1,101 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { motion } from "framer-motion";
-
-export const ProductCardContainer = styled(motion.div)`
-  width: 298px;
-  height: 458px;
-  border-radius: 45px;
-  background: transparent;
-  font-weight: 400;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
-  padding: 0 1rem;
-  margin: auto;
-  font-family: "jost-fonts";
-  background: ${(props) =>
-    props.background
-      ? `url(${props.background})`
-      : ' url("/images/product-list/bg-1.png")'};
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-position-y: 20px;
-  transition: 0.8s;
-  opacity: 0.4;
-  @media only screen and (max-width: 768px) {
-    width: 278px;
-    height: 425px;
-    max-width: 90%;
-  }
-  &:hover {
-    opacity: 1 !important;
-    transform: scale(1.2);
-  }
-`;
-export const ImageBox = styled.div`
-  height: 489px;
-  width: 225px;
-  max-width: 100%;
-  max-height: 60%;
-  position: relative;
-  display: grid;
-  place-items: center;
-`;
-export const Tagbox = styled.div`
-  background: #6dbd45;
-  border-radius: 26px;
-  width: 186px;
-  height: 34px;
-  color: white;
-  font-size: 14px;
-  min-height: 34px;
-  text-transform: uppercase;
+export const ProductCard = styled.div`
+  max-width: 571px;
+  max-height: 276px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0.1rem 1rem;
-  line-height: 34px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  word-wrap: break-word;
-  box-sizing: border-box;
-  z-index: 1;
+  /* align-items: center; */
   overflow: hidden;
-  text-overflow: hidden;
-  text-align: center;
-  margin-top: 1rem;
-  /* @media only screen and (max-width: 768px) {
-    max-width: 100%;
-    max-height: 40px;
-    min-height: 40px;
-    min-width: 80%;
-    font-size: 18px;
-    line-height: 40px;
-    /* align-items: center; 
-  } */
+  transition: all 0.6s;
+  background-color: white;
+  color: black;
+  text-transform: capitalize;
+  font-family: "Jost-fonts";
 `;
+export const ImageBox = styled.div`
+  min-width: 11.1rem;
+  position: relative;
+  min-height: 17.5rem;
+  max-height: 100%;
+  max-width: 40%;
+`;
+export const ProductContent = styled.div`
+  /* width: 60%; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  padding: 1em;
+  padding-right: 0;
+  .title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 100%;
+  }
+`;
+
+export const ProductName = styled.h4`
+  font-weight: 700;
+  font-size: 1.95rem;
+  min-width: 12ch;
+  margin: 0.5em 0;
+  margin-top: 0.3rem;
+  letter-spacing: 0.02em;
+`;
+
 export const ProductPrice = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-family: ${(props) => props.theme.typography.h2.fontFamily};
-  z-index: 1;
-  padding: 1rem 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin: 1.2em 0;
+  margin-bottom: 1.5rem;
+  p {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: black;
+    line-height: 2rem;
+  }
   span {
-    font-size: 20px;
+    font-size: 1.45rem;
+    color: #656363;
     text-decoration: line-through;
-    color: #ddd9d9;
-    font-weight: 500;
-    margin-right: 0.5rem;
+    margin-right: 0.5em;
+    /* line-height: 2.4rem; */
   }
-  p {
-    font-size: ${(props) => props.fontSize || "37px"};
-    font-weight: 600;
-    color: white;
-  }
-  /* @media only screen and (max-width: 768px) {
-    span {
-      font-size: 16px;
-    }
-    P {
-      font-size: 20px;
-      margin-left: 0.5rem;
-    }
-  } */
 `;
-export const RatingBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
+
+export const Button = styled(motion.button)`
+  border: none;
+  background: #ffc403;
+  width: 7.56rem;
+  height: 2.37rem;
+  border-radius: 2.5rem;
+  text-transform: uppercase;
+  color: white;
   font-weight: 500;
-  color: white;
-  margin: 0.5rem 0;
-  transition: 0.5s;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  min-height: 15px;
-  p {
-    margin-left: 0.5rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    outline: none;
+    border: none;
   }
 `;
-export const BottomBtns = styled.div`
-  width: 90%;
-  border-bottom-left-radius: 45px;
-  border-bottom-right-radius: 45px;
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: ${(props) => props.justifyContent || "center"};
-  z-index: 1;
-  color: white;
-  border-top: 1px solid white;
-  font-size: 19px;
-  transition: all 0.4s;
-  p {
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0 0.15rem;
-    text-transform: uppercase;
-    transition: 0.4s;
-  }
-  button {
-    background: transparent;
-    border: 1px solid white;
-    text-transform: uppercase;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    width: 50%;
-    height: 32px;
-    max-width: 160px;
-    margin: 0 0.3rem;
-    cursor: pointer;
-    p {
-      font-size: 12px;
-      font-weight: 500;
-    }
-    &:hover {
-      p {
-        letter-spacing: 1px;
-      }
-      opacity: 0.8;
-    }
-  }
-  /* @media only screen and (max-width: 768px) {
-    padding: 0.5rem 0;
-    p {
-      font-size: 16px;
-    }
-  } */
-`;
-const blur = keyframes`
-from {
-  filter:blur(25px);
-} 
-to {
-  filter:blur(5px);
-}
-`;
-export const ProductCardSkeleton = styled(ProductCardContainer)`
-  animation: ${blur} 4s linear infinite;
-`;
+
+export const ProductButton = ({ children, ...props }) => {
+  return (
+    <Button
+      whileHover={{ scale: 1.1 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      {...props}
+    >
+      {" "}
+      {children}
+    </Button>
+  );
+};

@@ -9,6 +9,7 @@ export const H1 = styled(Typography)`
   font-family: ${(props) =>
     props.fontFamily || props.theme.typography.h1.fontFamily};
   margin: ${(props) => props.margin || ".8rem 0"};
+  letter-spacing: 0.05em;
   @media only screen and (max-width: 768px) {
     word-break: break-word;
     font-size: ${(props) => props.theme.typography.h1.fontSizeSm};

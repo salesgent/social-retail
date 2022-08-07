@@ -12,13 +12,13 @@ const theme = {
   },
   typography: {
     h1: {
-      fontSize: "67px",
+      fontSize: "4.25rem",
       fontWeight: "700",
       fontFamily: "Jost-fonts",
       fontSizeSm: "42px",
     },
     h2: {
-      fontSize: "30px",
+      fontSize: "1.92rem",
       fontWeight: "700",
       fontFamily: "Qanelas",
       fontSizeSm: "24px",
@@ -31,7 +31,7 @@ const theme = {
     },
   },
   maxWidth: {
-    home: "1580px",
+    home: "1680px",
     productslist: "1710px",
     productDetails: "1710px",
   },

@@ -11,20 +11,22 @@ import {
   ProductSwiperContainer,
   ImageBox,
   HomeButton,
+  ProductContent,
 } from "./product.style";
 import Image from "next/image";
 import { H1 } from "../../../utilities/theme/components";
 import { productsData } from "./productSilderData";
+import CommonProductCard from "../../productCard/productCard";
 
 const ProductSlider = () => {
-  const navigationPrevRef = React.useRef(null);
-  const navigationNextRef = React.useRef(null);
+  // const navigationPrevRef = React.useRef(null);
+  // const navigationNextRef = React.useRef(null);
 
   return (
     <ProductsContainer
       direction="row"
       alignItems="center"
-      className="products-home-container"
+      className=" homeCarousel"
     >
       <h6>new arrivals</h6>
       <H1 margin="0rem 0 -1rem 0">every week</H1>
@@ -45,30 +47,31 @@ const ProductSlider = () => {
           1050: {
             slidesPerView: 3,
           },
-          1150: {
-            slidesPerView: 4,
-          },
-          1400: {
-            slidesPerView: 5,
-          },
-          1600: {
-            slidesPerView: 6,
-          },
+          // 1150: {
+          //   slidesPerView: 4,
+          // },
+          // 1400: {
+          //   slidesPerView: 5,
+          // },
+          // 1600: {
+          //   slidesPerView: 6,
+          // },
         }}
-        navigation={{
-          prevEl: navigationPrevRef.current,
-          nextEl: navigationNextRef.current,
-        }}
-        onBeforeInit={(swiper) => {
-          ProductsContainer;
-          swiper.params.navigation.prevEl = navigationPrevRef.current;
-          swiper.params.navigation.nextEl = navigationNextRef.current;
-        }}
-        centeredSlides={true}
-        centeredSlidesBounds={true}
+        navigation={false}
+        // navigation={{
+        //   prevEl: navigationPrevRef.current,
+        //   nextEl: navigationNextRef.current,
+        // }}
+        // onBeforeInit={(swiper) => {
+        //   ProductsContainer;
+        //   swiper.params.navigation.prevEl = navigationPrevRef.current;
+        //   swiper.params.navigation.nextEl = navigationNextRef.current;
+        // }}
+        // centeredSlides={true}
+        // centeredSlidesBounds={true}
         loop={true}
       >
-        <NavButton
+        {/* <NavButton
           ref={navigationPrevRef}
           margin={"auto 0 auto -61%"}
           marginSmall={"auto 0 auto -90%"}
@@ -91,34 +94,17 @@ const ProductSlider = () => {
             width={26}
             height={23}
           />
-        </NavButton>
+        </NavButton> */}
         {productsData.map((product, i) => (
           <SwiperSlide
             key={i}
             style={{ display: "grid", placeItems: "center" }}
           >
-            <ProductCard
-              backgroundColor={product.bgImage}
-              className="product-card"
-            >
-              <ImageBox>
-                <Image
-                  src={product.img}
-                  alt={product.productName}
-                  layout="fill"
-                  placeholder="blur"
-                  blurDataURL="/images/product-imgnotfound.png"
-                />
-              </ImageBox>
-              <ProductName>{product.productName}</ProductName>
-              <span>learn more</span>
-            </ProductCard>
+            <CommonProductCard product={product} />
           </SwiperSlide>
         ))}
       </ProductSwiperContainer>
-      <HomeButton>
-        shop by collection
-      </HomeButton>
+      <HomeButton>shop by collection</HomeButton>
     </ProductsContainer>
   );
 };

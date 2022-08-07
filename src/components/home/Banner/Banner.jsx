@@ -15,7 +15,7 @@ import { HomeButton } from "../productsSlider/product.style";
 
 const Banner = () => {
   const ref = useRef();
-  const InView = useInView(ref, { amount: 0.5, once: true });
+  const InView = useInView(ref, { amount: 0.3, once: true });
   return (
     <BannerSection>
       <BannerContainer>
