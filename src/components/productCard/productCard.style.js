@@ -31,10 +31,15 @@ export const ProductContent = styled.div`
   height: 100%;
   padding: 1em;
   padding-right: 0;
+  max-width: 60%;
+  margin-right: ${(props) => props.marginRight};
   .title {
     font-size: 1.05rem;
     font-weight: 500;
     line-height: 100%;
+  }
+  @media screen and (max-width: 1635px) {
+    margin-right: 0;
   }
 `;
 
@@ -46,7 +51,8 @@ export const ProductName = styled.h4`
   margin-top: 0.3rem;
   letter-spacing: 0.02em;
   line-height: 2.1rem;
-  max-height: 4.3rem;
+  min-height: 4.295rem;
+  max-height: 4.32rem;
   overflow: hidden;
   text-overflow: ellipsis;
   @media screen and (max-width: 640px) {

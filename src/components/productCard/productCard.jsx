@@ -30,7 +30,11 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
     <ProductCard className="product-card">
       <ImageBox>
         <Image
-          src={product.imageUrl}
+          src={
+            product.imageUrl && product.imageUrl !== "null"
+              ? product.imageUrl
+              : "/images/product-imgnotfound.png"
+          }
           alt={product.productName}
           layout="fill"
           placeholder="blur"
@@ -38,7 +42,9 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
         />
       </ImageBox>
       <ProductContent>
-        <span className="title">{product.title}</span>
+        <span className="title">
+          {product?.title || "Mya bambino gold social"}
+        </span>
         <ProductName>{product.productName}</ProductName>
         <div>
           <Rating
@@ -62,7 +68,7 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
         {product?.hasChildProduct === true ? (
           <ProductButton>shop now</ProductButton>
         ) : (
-          <ProductButton onClick={() => addToCart()} >add to cart</ProductButton>
+          <ProductButton onClick={() => addToCart()}>add to cart</ProductButton>
         )}
       </ProductContent>
     </ProductCard>

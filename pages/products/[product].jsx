@@ -12,10 +12,10 @@ import {
 } from "../../src/components/product-list/style";
 import { useDatafetcher } from "../../src/utilities/hooks/useDatafetcher";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { productsData } from "../../src/components/product-list/product-list.data";
 import CommonProductCard from "../../src/components/productCard/productCard";
 import OfferBanner from "../../src/components/home/OfferBanner/OfferBanner";
 import LeftSection from "../../src/components/product-list/leftSection/LeftSection";
+import ProductCardSkeleton from "../../src/components/productCard/productCardSkeleton/ProductCardSkeleton";
 
 const ProductsPage = () => {
   const productId = useSelector((state) => state.products.productsId);
@@ -33,22 +33,12 @@ const ProductsPage = () => {
   useEffect(() => {
     if (data && data) {
       setFirstLoading(false);
-      let updatedData = [];
-      data?.content?.map((product, i) => {
-        let number = i.toString();
-        number = number[number.length - 1];
-        updatedData.push(
-          (product[i] = {
-            ...product,
-            bgImage: productsData[number].bgImage,
-          })
-        );
-      });
-      if (updatedData.length > 0) {
+
+      if (data.content.length > 0) {
         if (products.length > 0 && page > 0) {
-          setProducts((products) => [...products, ...updatedData]);
+          setProducts((products) => [...products, ...data.content]);
         } else {
-          setProducts(updatedData);
+          setProducts(data.content);
         }
       }
       if (data?.totalPages <= page) {
@@ -64,15 +54,14 @@ const ProductsPage = () => {
       <ProductsContainer>
         <LeftSection />
         {firstLoading ? (
-          // <ProductsLoader number={6} />
-          <>loading</>
+          <ProductCardSkeleton />
         ) : (
           <>
             {products && products.length > 0 ? (
               <InfiniteScroll
                 dataLength={products?.length}
                 hasMore={pageable}
-                // loader={<ProductsLoader number={3} />}
+                loader={<ProductCardSkeleton />}
                 next={() => {
                   setPage((page) => page + 1);
                 }}
