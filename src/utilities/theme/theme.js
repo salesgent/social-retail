@@ -32,7 +32,7 @@ const theme = {
   },
   maxWidth: {
     home: "1680px",
-    productslist: "1710px",
+    productslist: "1680px",
     productDetails: "1710px",
   },
 };

@@ -30,7 +30,7 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
     <ProductCard className="product-card">
       <ImageBox>
         <Image
-          src={product.img}
+          src={product.imageUrl}
           alt={product.productName}
           layout="fill"
           placeholder="blur"

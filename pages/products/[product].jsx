@@ -10,12 +10,12 @@ import {
   ProductsGrid,
   ProductsNotFound,
 } from "../../src/components/product-list/style";
-import ProductCard from "../../src/components/productCard/productCard";
-import { H1 } from "../../src/utilities/theme/components";
 import { useDatafetcher } from "../../src/utilities/hooks/useDatafetcher";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { productsData } from "../../src/components/product-list/product-list.data";
-import ProductsLoader from "../../src/components/product-list/products-loader";
+import CommonProductCard from "../../src/components/productCard/productCard";
+import OfferBanner from "../../src/components/home/OfferBanner/OfferBanner";
+import LeftSection from "../../src/components/product-list/leftSection/LeftSection";
 
 const ProductsPage = () => {
   const productId = useSelector((state) => state.products.productsId);
@@ -59,27 +59,27 @@ const ProductsPage = () => {
 
   return (
     <ProductsSection>
-      <ProductsHeader>
-        <H1 variant="h2">PRODUCTS</H1>
-      </ProductsHeader>
+      <OfferBanner />
       <RouteBar />
       <ProductsContainer>
+        <LeftSection />
         {firstLoading ? (
-          <ProductsLoader number={6} />
+          // <ProductsLoader number={6} />
+          <>loading</>
         ) : (
           <>
             {products && products.length > 0 ? (
               <InfiniteScroll
                 dataLength={products?.length}
                 hasMore={pageable}
-                loader={<ProductsLoader number={3} />}
+                // loader={<ProductsLoader number={3} />}
                 next={() => {
                   setPage((page) => page + 1);
                 }}
               >
                 <ProductsGrid>
                   {products.map((product, i) => (
-                    <ProductCard
+                    <CommonProductCard
                       product={product}
                       key={i}
                       setSelectedId={setSelectedId}

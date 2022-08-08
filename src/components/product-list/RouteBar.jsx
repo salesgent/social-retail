@@ -27,15 +27,10 @@ const RouteBar = ({ onDetailsPage }) => {
       <Link href="/">
         <p>flying monkey </p>
       </Link>
-      <span>
-        <IoIosArrowForward />
-      </span>
+      <span></span>
       {onDetailsPage && (
         <p onClick={() => Router.back()}>
-          products{" "}
-          <span>
-            <IoIosArrowForward />
-          </span>
+          products <span></span>
         </p>
       )}
 

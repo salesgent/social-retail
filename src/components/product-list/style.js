@@ -58,10 +58,13 @@ export const NavHeader = styled.div`
     }
   }
   span {
-    color: #ef7922;
     margin: 0 0.6rem;
     display: grid;
+    width: 1rem;
     place-items: center;
+    width: 1rem;
+    height: 1px;
+    background: black;
   }
   @media only screen and (max-width: 1720px) {
     padding: 1rem;
@@ -72,24 +75,18 @@ export const NavHeader = styled.div`
 `;
 export const ProductsContainer = styled.div`
   width: 100%;
+  max-width: ${(props) => props.theme.maxWidth.productslist};
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: white;
 `;
 export const ProductsGrid = styled.div`
-  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1.4rem;
-  max-width: ${(props) => props.theme.maxWidth.productslist};
   padding: 4rem 0;
-  /* grid-column-gap: 1rem; */
   grid-row-gap: 76px;
-  @media only screen and (max-width: 1462px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
   @media only screen and (max-width: 946px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -111,6 +108,7 @@ export const ProductsNotFound = styled.div`
   margin: 3rem 0;
   margin-bottom: 25vh;
   background: #ef7922;
+  background: #ffc403;
   color: white;
   @media only screen and (max-width: 946px) {
     height: 80px;
