@@ -42,7 +42,8 @@ export const NavHeader = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 1rem 0;
-  font-size: 17px;
+  font-size: 1.313rem;
+  margin-left: 1em;
   color: black;
   font-weight: 400;
   text-transform: uppercase;
@@ -80,6 +81,7 @@ export const ProductsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
+  margin-top: 1.6em;
 `;
 export const ProductsGrid = styled.div`
   display: grid;

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { IoIosArrowForward } from "react-icons/io";
+
 ////
 import { NavHeader } from "./style";
 import { setProductsId } from "../../store/products";

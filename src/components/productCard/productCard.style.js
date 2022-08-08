@@ -86,7 +86,7 @@ export const ProductPrice = styled.div`
 export const Button = styled(motion.button)`
   border: none;
   background: #ffc403;
-  padding: 0.8em 1em;
+  padding: 0.6em 1em;
   border-radius: 2.5rem;
   text-transform: uppercase;
   color: white;

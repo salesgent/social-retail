@@ -11,8 +11,9 @@ import {
   ProductsContainer,
   ProductSwiperContainer,
   HomeButton,
+  ProductSliderHeader,
 } from "./product.style";
-import { H1 } from "../../../utilities/theme/components";
+
 import { productsData } from "./productSilderData";
 import CommonProductCard from "../../productCard/productCard";
 
@@ -24,9 +25,9 @@ const ProductSlider = ({ showTitle, title }) => {
       className=" homeCarousel"
     >
       {showTitle && <h6>new arrivals</h6>}
-      <H1 margin="0rem 0 -1rem 0" variant="h4">
+      <ProductSliderHeader variant="h4">
         {title}
-      </H1>
+      </ProductSliderHeader>
       <ProductSwiperContainer
         autoplay={{
           delay: 6500,

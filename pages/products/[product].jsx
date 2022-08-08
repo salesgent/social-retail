@@ -60,7 +60,7 @@ const ProductsPage = () => {
     }
   }, [data]);
 
-
+ 
   return (
     <ProductsSection>
       <OfferBanner />
