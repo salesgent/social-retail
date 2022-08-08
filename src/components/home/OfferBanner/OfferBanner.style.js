@@ -24,6 +24,7 @@ export const BannerText = styled.div`
   font-weight: bold;
   font-family: "jost-fonts";
   text-align: center;
+  text-transform: uppercase;
   @media only screen and (max-width: 786px) {
     font-size: 1.6rem;
   }

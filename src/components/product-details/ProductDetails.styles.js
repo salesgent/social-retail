@@ -275,18 +275,18 @@ export const TabsContainer = styled(Row)`
     align-items: center;
     cursor: pointer;
     min-width: max-content;
+    text-transform: uppercase;
+    padding: 0.8em 0;
+    font-size: 1.437rem;
+    transition: 0.4s;
+    &:hover {
+      background: #f6f6f6;
+    }
     h6 {
-      /* border-right: 2px solid black; */
-      padding: 0.5em 1.5em;
+      padding: 0 1.5em;
       font-size: 1.437rem;
       font-weight: 600;
-      transition: 0.4s;
       color: black;
-      /* height: 1.5rem; */
-
-      &:hover {
-        background: #f6f6f6;
-      }
     }
     span {
       background: #df363e;
@@ -303,6 +303,7 @@ export const TabsContainer = styled(Row)`
       font-weight: 500;
       text-align: center;
       margin: 0.5em 0;
+      border: none !important;
     }
   }
 `;

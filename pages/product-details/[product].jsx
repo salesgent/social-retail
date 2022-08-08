@@ -28,13 +28,13 @@ import {
 } from "../../src/components/product-details/ProductDetails.styles";
 import RouteBar from "../../src/components/product-list/RouteBar";
 import { useDatafetcher } from "../../src/utilities/hooks/useDatafetcher";
-import { H1 } from "../../src/utilities/theme/components";
-import { setCartData } from "../../src/store/cart";
+
 import useArray from "../../src/utilities/hooks/useArray";
-import { LocalCartFunction } from "../../src/service/asyncFunctions/cart";
+
 import OfferBanner from "../../src/components/home/OfferBanner/OfferBanner";
 import { ProductButton } from "../../src/components/productCard/productCard.style";
 import BrandCarousel from "../../src/components/home/Brands/Brands";
+import { localAddToCart } from "../../src/service/asyncFunctions/cart";
 
 const ProductImgCarousel = dynamic(
   () =>
@@ -46,6 +46,7 @@ const ProductImgCarousel = dynamic(
   }
 );
 
+
 const ProductsDetailsPage = () => {
   const [value, setValue] = useState(4);
   const [flavour, setflavour] = useState("");
@@ -54,9 +55,7 @@ const ProductsDetailsPage = () => {
   const dispatch = useDispatch();
 
   const id = useSelector((state) => state.products.productsId);
-  const cartData = useSelector((state) => state.cart.cartData);
-
-  const { push, array } = useArray(cartData);
+  const localCartData = useSelector((state) => state.cart.localCartData);
 
   const { data: product, error } = useDatafetcher(
     `/ecommerce/product/${id}?storeIds=${1}`
@@ -92,14 +91,12 @@ const ProductsDetailsPage = () => {
     }
   };
   ////////add to cart func
-  const LocalAddToCart = () => {
-    LocalCartFunction(array, product.masterProductDetails)(push)(dispatch);
+  const addToCart = () => {
+    localAddToCart(
+      [{ ...product.masterProductDetails, quantity: 1 }],
+      localCartData
+    )(dispatch);
   };
-  useEffect(() => {
-    if (array.length > 0) {
-      dispatch(setCartData(array));
-    }
-  }, [array]);
 
   //menu styles
   const MenuProps = {
@@ -148,9 +145,7 @@ const ProductsDetailsPage = () => {
               />
               <p>4.9 (2130 reviews)</p>
             </RatingBox>
-            {/* <ProductShortDescriptions
-              dangerouslySetInnerHTML={shortDescription()}
-            ></ProductShortDescriptions> */}
+
             <SkuTable>
               <b>Brand:</b> Social Hookah
               <br /> <b>Product Code:</b> J01379 <br />
@@ -209,7 +204,7 @@ const ProductsDetailsPage = () => {
               </QuantityBox>
             </QuantitySection>
             <BtnsSection>
-              <ProductButton onClick={() => LocalAddToCart()}>
+              <ProductButton onClick={() => addToCart()}>
                 add to cart
               </ProductButton>
               <ProductButton>buy now</ProductButton>
@@ -217,20 +212,32 @@ const ProductsDetailsPage = () => {
           </ProductDetailsBox>
         </ProductView>
         <TabsContainer>
-          <div className="tab" onClick={() => setSelectedTab(1)}>
-            <h6 style={selectedTab === 1 ? { background: "#F6F6F6" } : {}}>
-              Product Details
+          <div
+            className="tab"
+            onClick={() => setSelectedTab(1)}
+            style={selectedTab === 1 ? { background: "#F6F6F6" } : {}}
+          >
+            <h6>description</h6>
+          </div>
+          <div
+            className="tab"
+            onClick={() => setSelectedTab(2)}
+            style={selectedTab === 2 ? { background: "#F6F6F6" } : {}}
+          >
+            <h6
+              style={
+                selectedTab === 2 ? {} : { borderRight: "2px solid black" }
+              }
+            >
+              specifications
             </h6>
           </div>
-          <div className="tab" onClick={() => setSelectedTab(2)}>
-            <h6 style={selectedTab === 2 ? { background: "#F6F6F6" } : {}}>
-              Additional information
-            </h6>
-          </div>
-          <div className="tab" onClick={() => setSelectedTab(3)}>
-            <h6 style={selectedTab === 3 ? { background: "#F6F6F6" } : {}}>
-              Reviews (0)
-            </h6>
+          <div
+            className="tab"
+            onClick={() => setSelectedTab(3)}
+            style={selectedTab === 3 ? { background: "#F6F6F6" } : {}}
+          >
+            <h6>Reviews</h6>
           </div>
         </TabsContainer>
         <FullDescriptionBox>
