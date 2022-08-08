@@ -3,7 +3,7 @@
   overflow: hidden;
   padding: 0 0.4rem;
   // width: 40%;
-  width:100%;
+  width: 100%;
   max-width: 100%;
 
   .mainSwiper {
@@ -32,5 +32,8 @@
     height: 78px;
     position: relative;
     margin: auto;
+    border: 1px solid #aeaeae;
+    border-radius: 1.186rem;
+    overflow: hidden;
   }
 }

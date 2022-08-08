@@ -30,7 +30,7 @@ const RouteBar = ({ onDetailsPage }) => {
       <span></span>
       {onDetailsPage && (
         <p onClick={() => Router.back()}>
-          products <span></span>
+          product type <span></span>
         </p>
       )}
 

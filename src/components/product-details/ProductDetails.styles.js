@@ -57,17 +57,20 @@ export const ProductDetailsBox = styled.div`
   }
 `;
 
+export const ProductDetailsTitle = styled.span`
+  font-size: 2.125rem;
+  color: black;
+  font-weight: 500;
+`;
+
 export const ProductDetailedName = styled.h3`
-  /* width: 100%; */
   width: 17ch;
-  /* max-width: 450px; */
   text-transform: capitalize;
-  font-size: 44px;
+  font-size: 4.68rem;
   font-weight: 700;
-  /* font-family: "jost-fonts"; */
   line-height: 64px;
   word-break: break-word;
-  margin: 1rem 0;
+  margin: 0.4em 0;
 
   @media only screen and (max-width: 1168px) {
     max-width: 90%;
@@ -82,11 +85,18 @@ export const RatingBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  .text {
+    font-size: 0.9rem;
+    color: ${(props) => props.theme.palette.colors.other};
+    font-weight: 400;
+    margin-right: 1em;
+  }
   p {
     color: #4d4c4c;
-    font-size: 19px;
-    line-height: 15px;
+    font-size: 1.375rem;
+    line-height: 1.5rem;
     letter-spacing: 2%;
+    margin-left: 0.6em;
   }
 `;
 export const ProductShortDescriptions = styled.p`
@@ -98,6 +108,18 @@ export const ProductShortDescriptions = styled.p`
   letter-spacing: 0.03em;
   line-height: 160%;
 `;
+export const SkuTable = styled.div`
+  /* display:flex;
+flex-direction: column;
+align-items:center; */
+  font-size: 1.56rem;
+  margin: 0.8em 0;
+  b {
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+`;
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -136,16 +158,15 @@ export const PriceBox = styled(Row)`
   align-items: flex-end;
   margin: 1rem 0;
   span {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #656363;
     text-decoration: line-through;
     font-weight: 500;
+    margin-right: 0.6em;
   }
   h6 {
-    font-size: 49px;
-    color: #df363e;
+    font-size: 3.062rem;
     font-weight: 700;
-    margin-left: 0.8rem;
   }
   @media only screen and (max-width: 768px) {
     span {
@@ -159,8 +180,29 @@ export const PriceBox = styled(Row)`
 
 export const QuantitySection = styled(Row)`
   h6 {
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 1.563rem;
+  }
+  margin: 0.8em 0;
+  .lightBlue,
+  .lightGreen {
+    width: 2.135em;
+    height: 2.135em;
+    border-radius: 0.8rem;
+    background: #5e98c1;
+    margin: 0 0.4em;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:focus {
+      border: 2px solid black;
+    }
+  }
+  .lightGreen {
+    background: #5ec192;
   }
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -207,42 +249,13 @@ export const QuantityBox = styled(Row)`
 
 export const BtnsSection = styled(Row)`
   margin: 3rem 0;
-  Button {
-    display: grid;
-    place-items: center;
+  button {
+    padding: 0.92em 2.58em;
+    margin-right: 2em;
+    font-size: 1.56rem;
     font-weight: 700;
-    font-size: 25px;
-    color: white;
-    background: #ffc403;
-    border-radius: 40px;
-    height: 89px;
-    width: 378px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s;
-    &:hover {
-      opacity: 0.8;
-      letter-spacing: 1px;
-    }
   }
-  span {
-    display: grid;
-    place-items: center;
-    font-size: 25px;
-    border-radius: 50%;
-    width: 65px;
-    height: 65px;
-    background: #ff2849;
-    color: white;
-    margin-left: 2rem;
-    transition: 0.4s;
-    &:hover {
-      opacity: 0.7;
-      cursor: pointer;
-      font-size: 30px;
-    }
-  }
+
   @media (max-width: 768px) {
     button {
       width: 268px;
@@ -266,25 +279,28 @@ export const SkuBox = styled.div`
 
 export const TabsContainer = styled(Row)`
   width: 100%;
-  margin: 1rem;
+  margin: 4em;
   color: black;
   border-color: black;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   .tab {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 1rem;
     cursor: pointer;
     min-width: max-content;
     h6 {
-      font-size: 35px;
-      font-weight: 400;
+      /* border-right: 2px solid black; */
+      padding: 0.5em 1.5em;
+      font-size: 1.437rem;
+      font-weight: 600;
       transition: 0.4s;
       color: black;
+      /* height: 1.5rem; */
+
       &:hover {
-        color: #df363e;
+        background: #f6f6f6;
       }
     }
     span {
@@ -308,8 +324,10 @@ export const FullDescriptionBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2em 1em;
   font-size: 25px;
+  background: #f6f6f6;
+  margin-bottom: 4em;
   @media only screen and (max-width: 768px) {
     font-size: 16px;
   }

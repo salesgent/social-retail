@@ -26,15 +26,17 @@ import {
   SkuBox,
   TabsContainer,
   FullDescriptionBox,
+  ProductDetailsTitle,
+  SkuTable,
 } from "../../src/components/product-details/ProductDetails.styles";
 import RouteBar from "../../src/components/product-list/RouteBar";
-import { ProductsHeader } from "../../src/components/product-list/style";
 import { useDatafetcher } from "../../src/utilities/hooks/useDatafetcher";
 import { H1 } from "../../src/utilities/theme/components";
-import { setAlert } from "../../src/service/asyncFunctions/home";
 import { setCartData } from "../../src/store/cart";
 import useArray from "../../src/utilities/hooks/useArray";
 import { LocalCartFunction } from "../../src/service/asyncFunctions/cart";
+import OfferBanner from "../../src/components/home/OfferBanner/OfferBanner";
+import { ProductButton } from "../../src/components/productCard/productCard.style";
 
 const ProductImgCarousel = dynamic(
   () =>
@@ -125,9 +127,7 @@ const ProductsDetailsPage = () => {
 
   return (
     <ProductDetailsSection>
-      <ProductsHeader>
-        <H1 variant="h2">PRODUCTS</H1>
-      </ProductsHeader>
+      <OfferBanner />
       <ProductDetailsContainer>
         <RouteBar onDetailsPage={true} />
         <ProductView>
@@ -135,10 +135,12 @@ const ProductsDetailsPage = () => {
             <ProductImgCarousel images={images} />
           </ProductImageContainer>
           <ProductDetailsBox>
+            <ProductDetailsTitle>Mya Bambino Gold Social</ProductDetailsTitle>
             <ProductDetailedName>
               {product?.masterProductDetails?.productName}
             </ProductDetailedName>
             <RatingBox>
+              <span className="text">7 sold in last 10 hours</span>
               <Rating
                 name="simple-controlled"
                 value={value}
@@ -148,42 +150,15 @@ const ProductsDetailsPage = () => {
               />
               <p>4.9 (2130 reviews)</p>
             </RatingBox>
-            <ProductShortDescriptions
+            {/* <ProductShortDescriptions
               dangerouslySetInnerHTML={shortDescription()}
-            ></ProductShortDescriptions>
-            {product?.content && product?.content?.length > 0 && (
-              <CategorySelector>
-                <h4>Flavours :</h4>
-                <FormControl>
-                  <InputLabel id="flavour-select" sx={{ lineHeight: "13px" }}>
-                    CHOOSE A FLAVOUR
-                  </InputLabel>
-                  <Select
-                    labelId="flavour-select"
-                    className="flavour-select"
-                    MenuProps={MenuProps}
-                    value={flavour}
-                    label="CHOOSe A FLAVOUR"
-                    onChange={handleChange}
-                    SelectDisplayProps={{
-                      style: {
-                        maxHeight: 40,
-                        minWidth: 280,
-                        maxWidth: 350,
-                        borderRadius: 7,
-                        padding: "10px 10px",
-                      },
-                    }}
-                  >
-                    {product?.content?.map((flavour, i) => (
-                      <MenuItem key={i} value="">
-                        <em>None</em>
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </CategorySelector>
-            )}
+            ></ProductShortDescriptions> */}
+            <SkuTable>
+              <b>Brand:</b> Social Hookah
+              <br /> <b>Product Code:</b> J01379 <br />
+              <b>Availability:</b> In stock
+            </SkuTable>
+
             {product?.masterProductDetails?.standardPrice ===
             product?.masterProductDetails?.standardPriceWithoutDiscount ? (
               <PriceBox>
@@ -205,7 +180,12 @@ const ProductsDetailsPage = () => {
               </PriceBox>
             )}
             <QuantitySection>
-              <h6>Earn up to 195 Loyalty Points:</h6>
+              <h6>Available Colors:</h6>
+              <span className="lightBlue" tabIndex={1}></span>
+              <span className="lightGreen" tabIndex={1}></span>
+            </QuantitySection>
+            <QuantitySection>
+              <h6>Quantity:</h6>
               <QuantityBox>
                 <span
                   onClick={() => {
@@ -225,52 +205,31 @@ const ProductsDetailsPage = () => {
               </QuantityBox>
             </QuantitySection>
             <BtnsSection>
-              <button onClick={() => LocalAddToCart()}>Add to cart</button>
-              <span>
-                <AiOutlineHeart />
-              </span>
+              <ProductButton onClick={() => LocalAddToCart()}>
+                add to cart
+              </ProductButton>
+              <ProductButton>buy now</ProductButton>
             </BtnsSection>
-            <hr />
-            <SkuBox>
-              SKU: N/A
-              <br />
-              Categories: Delta-8 Products, Disposables, Vape
-              <br />
-              Brand: Flying Monkey
-              <br />
-            </SkuBox>
           </ProductDetailsBox>
         </ProductView>
         <TabsContainer>
           <div className="tab" onClick={() => setSelectedTab(1)}>
-            <h6
-              style={
-                selectedTab === 1 ? { color: "#DF363E", fontWeight: 700 } : {}
-              }
-            >
+            <h6 style={selectedTab === 1 ? { background: "#F6F6F6" } : {}}>
               Product Details
             </h6>
-            <span style={selectedTab === 1 ? { width: "100%" } : {}}></span>
+            {/* <span style={selectedTab === 1 ? { width: "100%" } : {}}></span> */}
           </div>
           <div className="tab" onClick={() => setSelectedTab(2)}>
-            <h6
-              style={
-                selectedTab === 2 ? { color: "#DF363E", fontWeight: 700 } : {}
-              }
-            >
+            <h6 style={selectedTab === 2 ? { background: "#F6F6F6" } : {}}>
               Additional information
             </h6>
-            <span style={selectedTab === 2 ? { width: "100%" } : {}}></span>
+            {/* <span style={selectedTab === 2 ? { width: "100%" } : {}}></span> */}
           </div>
           <div className="tab" onClick={() => setSelectedTab(3)}>
-            <h6
-              style={
-                selectedTab === 3 ? { color: "#DF363E", fontWeight: 700 } : {}
-              }
-            >
+            <h6 style={selectedTab === 3 ? { background: "#F6F6F6" } : {}}>
               Reviews (0)
             </h6>
-            <span style={selectedTab === 3 ? { width: "100%" } : {}}></span>
+            {/* <span style={selectedTab === 3 ? { width: "100%" } : {}}></span> */}
           </div>
         </TabsContainer>
         <FullDescriptionBox>
