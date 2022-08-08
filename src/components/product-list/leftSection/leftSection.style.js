@@ -11,6 +11,9 @@ export const LeftNavContainer = styled.div`
   align-items: center;
   padding: 0em 2em;
   color: ${(props) => props.theme.palette.colors.other};
+/* @media only screen and (max-width: 1639px) { */
+    margin-right: 1em;
+  /* } */
 `;
 
 export const DropDownHeading = styled.div`

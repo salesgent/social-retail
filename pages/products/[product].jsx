@@ -39,7 +39,7 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
 
   const { data, error, loading } = useDatafetcher(
-    `/ecommerce/product/category?categoryIdList=${productId}&page=${page}&size=18&sort=${apiSorting.sort}&sortDirection=${apiSorting.order}&storeIds=1`,
+    `/ecommerce/product/category?categoryIdList=${productId}&page=${page}&size=20&sort=${apiSorting.sort}&sortDirection=${apiSorting.order}&storeIds=1`,
     productId
   );
   //////fetching data and adding bg images
@@ -60,6 +60,7 @@ const ProductsPage = () => {
     }
   }, [data]);
 
+
   return (
     <ProductsSection>
       <OfferBanner />
@@ -67,12 +68,13 @@ const ProductsPage = () => {
       <ProductsContainer>
         <LeftSection />
         <Stack flexDirection="column">
-          {/* <FilterBar
+          <FilterBar
             setApiSorting={setApiSorting}
             length={products?.length}
             setPage={setPage}
             setPageable={setPageable}
-          /> */}
+            setFirstLoading={setFirstLoading}
+          />
           {firstLoading ? (
             <ProductCardSkeleton />
           ) : (

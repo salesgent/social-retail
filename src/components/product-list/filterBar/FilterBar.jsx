@@ -1,8 +1,15 @@
 import React from "react";
-
-const FilterBar = ({ setApiSorting, length, setPage, setPageable }) => {
-  //////////filter products
+import { FilterBarContainer, SelectBox } from "./FilterBar.style";
+const FilterBar = ({
+  setApiSorting,
+  length,
+  setPage,
+  setPageable,
+  setFirstLoading,
+}) => {
+  ////////filter products
   const filterProducts = (value) => {
+    setFirstLoading(true);
     setPage(0);
     setPageable(true);
     // dispatch(toggleProductsNotFound(false));
@@ -23,9 +30,9 @@ const FilterBar = ({ setApiSorting, length, setPage, setPageable }) => {
     }
   };
   return (
-    <FilterBar>
+    <FilterBarContainer>
       {length || 0} Displays
-      <div>
+      <SelectBox>
         Sort by :
         <select
           onChange={(e) => {
@@ -55,8 +62,8 @@ const FilterBar = ({ setApiSorting, length, setPage, setPageable }) => {
             price(high - low )
           </option>
         </select>
-      </div>
-    </FilterBar>
+      </SelectBox>
+    </FilterBarContainer>
   );
 };
 
