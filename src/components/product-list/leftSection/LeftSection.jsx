@@ -10,10 +10,15 @@ import {
   Hr,
   LeftNavContainer,
 } from "./leftSection.style";
+import { useDatafetcher } from "../../../utilities/hooks/useDatafetcher";
 
 const LeftSection = () => {
   const [showBrands, setShowBrands] = useState(true);
   const [showPrice, setShowPrice] = useState(true);
+  const { data, error } = useDatafetcher(
+    "/brand?name=appl&page=0&size=2&sort=name&sortDirection=ASC"
+  );
+
   return (
     <LeftNavContainer>
       <DropDownHeading>
@@ -26,26 +31,13 @@ const LeftSection = () => {
       </DropDownHeading>
       {showBrands && (
         <DropContent flexDirection="column" alignItems="flex-start">
-          <DropRow alignItems="center" flexDirection="row">
-            <input type="checkbox" defaultChecked />
-            <h6>Disposable vape</h6>
-          </DropRow>
-          <DropRow alignItems="center" flexDirection="row">
-            <input type="checkbox" checked={false} />
-            <h6>Disposable vape</h6>
-          </DropRow>
-          <DropRow alignItems="center" flexDirection="row">
-            <input type="checkbox" />
-            <h6>Disposable vape</h6>
-          </DropRow>
-          <DropRow alignItems="center" flexDirection="row">
-            <input type="checkbox" />
-            <h6>Disposable vape</h6>
-          </DropRow>
-          <DropRow alignItems="center" flexDirection="row">
-            <input type="checkbox" />
-            <h6>Disposable vape</h6>
-          </DropRow>
+          {data &&
+            data.content.map((brand, i) => (
+              <DropRow alignItems="center" flexDirection="row" key={i}>
+                <input type="checkbox" value={brand.id} />
+                <h6>{brand.name}</h6>
+              </DropRow>
+            ))}
         </DropContent>
       )}
       <Hr />
