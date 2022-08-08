@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 export const ProductCard = styled.div`
-  max-width: 571px;
-  max-height: 276px;
+  max-width: 35.685rem;
+  max-height: 17.46rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -80,8 +80,7 @@ export const ProductPrice = styled.div`
 export const Button = styled(motion.button)`
   border: none;
   background: #ffc403;
-  width: 7.56rem;
-  height: 2.37rem;
+  padding: 0.8em 1em;
   border-radius: 2.5rem;
   text-transform: uppercase;
   color: white;

@@ -22,7 +22,7 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
   const localCartData = useSelector((state) => state.cart.localCartData);
 
   ////////add to cart func
-  const LocalAddToCart = () => {
+  const addToCart = () => {
     localAddToCart([{ ...product, quantity: 1 }], localCartData)(dispatch);
   };
 
@@ -43,7 +43,7 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
         <div>
           <Rating
             value={rating}
-            onChange={(e) => setrating(e.value)}
+            // onChange={(e) => setrating(e.value)}
             readonly={true}
             size="medium"
           />
@@ -59,7 +59,11 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
             <p>${product.standardPrice?.toFixed(2)}</p>
           </ProductPrice>
         )}
-        <ProductButton>shop now</ProductButton>
+        {product?.hasChildProduct === true ? (
+          <ProductButton>shop now</ProductButton>
+        ) : (
+          <ProductButton onClick={() => addToCart()} >add to cart</ProductButton>
+        )}
       </ProductContent>
     </ProductCard>
   );
