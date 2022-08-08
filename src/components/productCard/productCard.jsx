@@ -14,7 +14,7 @@ import {
   ProductPrice,
 } from "./productCard.style";
 
-const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
+const CommonProductCard = ({ product }) => {
   const [rating, setrating] = useState(4);
   const Router = useRouter();
   const dispatch = useDispatch();

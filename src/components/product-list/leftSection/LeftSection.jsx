@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Checkbox, Slider, Stack } from "@mui/material";
+import { Slider } from "@mui/material";
 import React from "react";
 import { BsChevronDown } from "react-icons/bs";
 /////
@@ -9,7 +9,7 @@ import {
   DropRow,
   Hr,
   LeftNavContainer,
-} from "./leftSection.style";
+} from "./LeftSection.style";
 import { useDatafetcher } from "../../../utilities/hooks/useDatafetcher";
 
 const LeftSection = () => {
@@ -83,7 +83,6 @@ const LeftSection = () => {
       <DropDownHeading>
         discount <BsChevronDown className="icon" />{" "}
       </DropDownHeading>
-      {/* <DropContent></DropContent> */}
     </LeftNavContainer>
   );
 };

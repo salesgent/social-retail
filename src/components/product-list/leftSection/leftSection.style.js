@@ -1,5 +1,5 @@
-import { Stack } from "@mui/material";
 import styled from "styled-components";
+import { Stack } from "@mui/material";
 
 export const LeftNavContainer = styled.div`
   width: 27.126rem;
@@ -15,7 +15,6 @@ export const LeftNavContainer = styled.div`
 
 export const DropDownHeading = styled.div`
   width: 100%;
-  /* padding: 1em 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,8 +32,6 @@ export const DropDownHeading = styled.div`
 
 export const DropContent = styled(Stack)`
   width: 100%;
-  /* padding-bottom: 1em; */
-  /* border-bottom: 1px solid black; */
 `;
 
 export const DropRow = styled(Stack)`
@@ -50,7 +47,7 @@ export const DropRow = styled(Stack)`
     color: white;
     border: 1px solid white !important;
     outline: none;
-
+    cursor: pointer;
     &:hover,
     &:focus {
       color: white !important;
@@ -71,7 +68,7 @@ export const DropRow = styled(Stack)`
 export const Hr = styled.hr`
   border: none;
   width: 100%;
-  margin: .5em 0;
+  margin: 0.5em 0;
   background-color: black;
   height: 1px;
 `;
