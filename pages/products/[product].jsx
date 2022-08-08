@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 ////////////////////////////////////////////////////////////////
 import RouteBar from "../../src/components/product-list/RouteBar";
 import {
   ProductsSection,
-  ProductsHeader,
   ProductsContainer,
   ProductsGrid,
   ProductsNotFound,
@@ -16,6 +14,7 @@ import CommonProductCard from "../../src/components/productCard/productCard";
 import OfferBanner from "../../src/components/home/OfferBanner/OfferBanner";
 import LeftSection from "../../src/components/product-list/leftSection/LeftSection";
 import ProductCardSkeleton from "../../src/components/productCard/productCardSkeleton/ProductCardSkeleton";
+import ProductSlider from "../../src/components/home/productsSlider/ProductSlider";
 
 const ProductsPage = () => {
   const productId = useSelector((state) => state.products.productsId);
@@ -84,6 +83,10 @@ const ProductsPage = () => {
         )}
         {error && <ProductsNotFound>Something went wrong!</ProductsNotFound>}
       </ProductsContainer>
+      <ProductSlider
+        title="Recommend Products
+"
+      />
     </ProductsSection>
   );
 };

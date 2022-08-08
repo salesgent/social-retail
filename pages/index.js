@@ -1,13 +1,11 @@
 import Head from "next/head";
-import styled from "styled-components";
 import dynamic from "next/dynamic";
-////////////////////////////////////////////////////////
 //////swiper slider/////////////////
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-//////
+////////////////////////////////////////////////////////
 
 const BrandCarousel = dynamic(
   () => import("../src/components/home/Brands/Brands"),
@@ -22,7 +20,6 @@ const OfferBanner = dynamic(
   () => import("../src/components/home/OfferBanner/OfferBanner"),
   { ssr: false }
 );
-// import OfferBanner from "../src/components/home/OfferBanner/OfferBanner";
 import Banner from "../src/components/home/Banner/Banner";
 
 export default function Home() {
@@ -38,7 +35,7 @@ export default function Home() {
         <LandingCarousel />
         <OfferBanner color="black" />
         <BrandCarousel />
-        <ProductSlider />
+        <ProductSlider showTitle={true} title=" every week" />
         <Banner />
       </main>
     </div>

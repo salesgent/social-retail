@@ -87,6 +87,7 @@ export const ProductsGrid = styled.div`
   grid-gap: 1.4rem;
   padding: 4rem 0;
   grid-row-gap: 76px;
+  margin-bottom: 4em;
   @media only screen and (max-width: 946px) {
     grid-template-columns: 1fr 1fr;
   }
