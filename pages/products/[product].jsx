@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import dynamic from "next/dynamic";
 ////////////////////////////////////////////////////////////////
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 const RouteBar = dynamic(
   () => import("../../src/components/product-list/RouteBar"),
   { ssr: false }
@@ -60,7 +64,6 @@ const ProductsPage = () => {
     }
   }, [data]);
 
- 
   return (
     <ProductsSection>
       <OfferBanner />

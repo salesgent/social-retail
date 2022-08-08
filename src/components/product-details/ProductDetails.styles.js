@@ -22,7 +22,7 @@ export const ProductView = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 4rem;
 
   hr {
@@ -38,8 +38,10 @@ export const ProductView = styled.div`
 `;
 export const ProductImageContainer = styled.div`
   width: 40%;
+  margin-top: 1em;
   @media only screen and (max-width: 1168px) {
     width: 100%;
+    margin-top: 0;
   }
 `;
 
@@ -61,6 +63,10 @@ export const ProductDetailsTitle = styled.span`
   font-size: 2.125rem;
   color: black;
   font-weight: 500;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.4rem;
+    margin-top: 1em;
+  }
 `;
 
 export const ProductDetailedName = styled.h3`
@@ -68,15 +74,17 @@ export const ProductDetailedName = styled.h3`
   text-transform: capitalize;
   font-size: 4.68rem;
   font-weight: 700;
-  line-height: 64px;
+  line-height: 4.98rem;
   word-break: break-word;
   margin: 0.4em 0;
+  max-width: 100%;
 
   @media only screen and (max-width: 1168px) {
     max-width: 90%;
   }
   @media only screen and (max-width: 768px) {
-    font-size: 34px;
+    font-size: 2.45rem;
+    line-height: 3rem;
     max-width: 100%;
   }
 `;
@@ -99,24 +107,22 @@ export const RatingBox = styled.div`
     margin-left: 0.6em;
   }
 `;
-export const ProductShortDescriptions = styled.p`
-  max-width: 340px;
-  font-size: 16px;
-  word-break: break-word;
-  font-weight: 300;
-  margin: 1rem 0;
-  letter-spacing: 0.03em;
-  line-height: 160%;
-`;
+// export const ProductShortDescriptions = styled.p`
+//   max-width: 340px;
+//   font-size: 16px;
+//   word-break: break-word;
+//   font-weight: 300;
+//   margin: 1rem 0;
+//   letter-spacing: 0.03em;
+//   line-height: 160%;
+// `;
 export const SkuTable = styled.div`
-  /* display:flex;
-flex-direction: column;
-align-items:center; */
   font-size: 1.56rem;
   margin: 0.8em 0;
   b {
     font-weight: bold;
     margin-right: 0.5em;
+    line-height: 1.5;
   }
 `;
 
@@ -137,15 +143,7 @@ export const CategorySelector = styled(Row)`
     font-weight: 700;
     margin-right: 0.8rem;
   }
-  /* .flavour-select {
-    min-width: 260px;
-    max-width: 350px;
-    border: 1px solid #d4cdcd;
-    border-radius: 7px;
-    height: 41px;
-    padding: 0 0.5rem;
-    background: white;
-  } */
+
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -208,7 +206,7 @@ export const QuantitySection = styled(Row)`
     flex-direction: column;
     /* align-items: ; */
     h6 {
-      margin: 2rem 0;
+      margin: 1em 0;
     }
   }
   /* margin: 1rem 0; */
@@ -258,22 +256,9 @@ export const BtnsSection = styled(Row)`
 
   @media (max-width: 768px) {
     button {
-      width: 268px;
-      border-radius: 30px;
-      height: 65px;
+      padding: 0.9em 1.6em;
+      font-size: 1.3rem;
     }
-  }
-`;
-
-export const SkuBox = styled.div`
-  font-size: 26px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: black;
-  margin-bottom: 2rem;
-  @media only screen and (max-width: 768px) {
-    font-size: 23px;
   }
 `;
 
@@ -312,10 +297,12 @@ export const TabsContainer = styled(Row)`
     }
   }
   @media only screen and (max-width: 768px) {
+    flex-direction: column;
     .tab h6 {
       font-size: 21px;
       font-weight: 500;
       text-align: center;
+      margin: 0.5em 0;
     }
   }
 `;

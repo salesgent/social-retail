@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useSelector, useDispatch } from "react-redux";
-import { Rating } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineHeart } from "react-icons/ai";
+import { Rating, Stack } from "@mui/material";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 //////////
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import {
   ProductDetailsSection,
   ProductView,
   ProductDetailsContainer,
   ProductDetailsBox,
   ProductDetailedName,
-  ProductShortDescriptions,
   PriceBox,
   RatingBox,
   ProductImageContainer,
-  CategorySelector,
   QuantitySection,
   QuantityBox,
   BtnsSection,
@@ -37,6 +34,7 @@ import useArray from "../../src/utilities/hooks/useArray";
 import { LocalCartFunction } from "../../src/service/asyncFunctions/cart";
 import OfferBanner from "../../src/components/home/OfferBanner/OfferBanner";
 import { ProductButton } from "../../src/components/productCard/productCard.style";
+import BrandCarousel from "../../src/components/home/Brands/Brands";
 
 const ProductImgCarousel = dynamic(
   () =>
@@ -181,8 +179,14 @@ const ProductsDetailsPage = () => {
             )}
             <QuantitySection>
               <h6>Available Colors:</h6>
-              <span className="lightBlue" tabIndex={1}></span>
-              <span className="lightGreen" tabIndex={1}></span>
+              <Stack
+                flexDirection="row"
+                justfiyContent="center"
+                alignItems="center"
+              >
+                <span className="lightBlue" tabIndex={1}></span>
+                <span className="lightGreen" tabIndex={1}></span>
+              </Stack>
             </QuantitySection>
             <QuantitySection>
               <h6>Quantity:</h6>
@@ -217,19 +221,16 @@ const ProductsDetailsPage = () => {
             <h6 style={selectedTab === 1 ? { background: "#F6F6F6" } : {}}>
               Product Details
             </h6>
-            {/* <span style={selectedTab === 1 ? { width: "100%" } : {}}></span> */}
           </div>
           <div className="tab" onClick={() => setSelectedTab(2)}>
             <h6 style={selectedTab === 2 ? { background: "#F6F6F6" } : {}}>
               Additional information
             </h6>
-            {/* <span style={selectedTab === 2 ? { width: "100%" } : {}}></span> */}
           </div>
           <div className="tab" onClick={() => setSelectedTab(3)}>
             <h6 style={selectedTab === 3 ? { background: "#F6F6F6" } : {}}>
               Reviews (0)
             </h6>
-            {/* <span style={selectedTab === 3 ? { width: "100%" } : {}}></span> */}
           </div>
         </TabsContainer>
         <FullDescriptionBox>
@@ -238,6 +239,7 @@ const ProductsDetailsPage = () => {
           )}
         </FullDescriptionBox>
       </ProductDetailsContainer>
+      <BrandCarousel />
     </ProductDetailsSection>
   );
 };

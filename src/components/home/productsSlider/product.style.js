@@ -104,6 +104,7 @@ export const HomeButton = ({ children, ...props }) => {
   return (
     <Button
       whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 1.1 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       {...props}
     >

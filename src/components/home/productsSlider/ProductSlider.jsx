@@ -1,10 +1,7 @@
 import { SwiperSlide } from "swiper/react";
 import React from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 /////////
 import {
