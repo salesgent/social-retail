@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartData: {},
-  localCartData:{},
+  localCartData: {},
+  loading:false,
 };
 
 export const CartPageSlice = createSlice({

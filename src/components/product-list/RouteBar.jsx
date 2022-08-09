@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { IoIosArrowForward } from "react-icons/io";
+
 ////
 import { NavHeader } from "./style";
 import { setProductsId } from "../../store/products";
@@ -27,15 +27,10 @@ const RouteBar = ({ onDetailsPage }) => {
       <Link href="/">
         <p>flying monkey </p>
       </Link>
-      <span>
-        <IoIosArrowForward />
-      </span>
+      <span></span>
       {onDetailsPage && (
         <p onClick={() => Router.back()}>
-          products{" "}
-          <span>
-            <IoIosArrowForward />
-          </span>
+          product type <span></span>
         </p>
       )}
 

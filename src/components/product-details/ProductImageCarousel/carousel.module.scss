@@ -2,20 +2,19 @@
   // max-height: 530px;
   overflow: hidden;
   padding: 0 0.4rem;
+
   // width: 40%;
-  width:100%;
+  width: 100%;
   max-width: 100%;
 
   .mainSwiper {
     max-height: 459px;
     max-width: 100%;
     max-width: 445px;
-    max-height: 663px;
+    max-height: 563px;
     .img {
       max-width: 100%;
-      // height: 320px;
-      // aspect-ratio: 1;
-      // max-width: 320px;
+      min-height: 30rem;
     }
   }
 }
@@ -32,5 +31,8 @@
     height: 78px;
     position: relative;
     margin: auto;
+    border: 1px solid #aeaeae;
+    border-radius: 1.186rem;
+    overflow: hidden;
   }
 }

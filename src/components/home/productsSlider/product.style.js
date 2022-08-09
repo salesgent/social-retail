@@ -2,11 +2,10 @@ import styled from "styled-components";
 import { Stack } from "@mui/material";
 import { Swiper } from "swiper/react";
 import { motion } from "framer-motion";
+import { H1 } from "../../../utilities/theme/components";
 
 export const ProductsContainer = styled(Stack)`
   width: 100%;
-  /* min-height: 931px; */
-  /* background: #222222; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -38,13 +37,20 @@ export const ProductSwiperContainer = styled(Swiper)`
   /* min-height: 480px; */
   max-width: ${(props) => props.theme.maxWidth.home};
   margin: 5em 0;
+  margin-top: 0;
 
   @media only screen and (max-width: 748px) {
-    margin: 2.8em 0;
+    /* margin: 2.8em 0; */
     margin-top: 3.8rem;
   }
   /* max-width: 290px;
   overflow: visible; */
+`;
+export const ProductSliderHeader = styled(H1)`
+  margin-bottom: 1.2em;
+  @media only screen and (max-width: 748px) {
+    margin-bottom: 0.8em;
+  }
 `;
 export const ProductsBrandImg = styled.img`
   width: 218px;
@@ -98,6 +104,7 @@ export const HomeButton = ({ children, ...props }) => {
   return (
     <Button
       whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 1.1 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       {...props}
     >

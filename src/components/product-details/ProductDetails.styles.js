@@ -22,7 +22,7 @@ export const ProductView = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 4rem;
 
   hr {
@@ -38,8 +38,10 @@ export const ProductView = styled.div`
 `;
 export const ProductImageContainer = styled.div`
   width: 40%;
+  margin-top: 1em;
   @media only screen and (max-width: 1168px) {
     width: 100%;
+    margin-top: 0;
   }
 `;
 
@@ -57,23 +59,32 @@ export const ProductDetailsBox = styled.div`
   }
 `;
 
+export const ProductDetailsTitle = styled.span`
+  font-size: 2.125rem;
+  color: black;
+  font-weight: 500;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.4rem;
+    margin-top: 1em;
+  }
+`;
+
 export const ProductDetailedName = styled.h3`
-  /* width: 100%; */
   width: 17ch;
-  /* max-width: 450px; */
   text-transform: capitalize;
-  font-size: 44px;
+  font-size: 4.68rem;
   font-weight: 700;
-  /* font-family: "jost-fonts"; */
-  line-height: 64px;
+  line-height: 4.98rem;
   word-break: break-word;
-  margin: 1rem 0;
+  margin: 0.4em 0;
+  max-width: 100%;
 
   @media only screen and (max-width: 1168px) {
     max-width: 90%;
   }
   @media only screen and (max-width: 768px) {
-    font-size: 34px;
+    font-size: 2.45rem;
+    line-height: 3rem;
     max-width: 100%;
   }
 `;
@@ -82,22 +93,39 @@ export const RatingBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  .text {
+    font-size: 0.9rem;
+    color: ${(props) => props.theme.palette.colors.other};
+    font-weight: 400;
+    margin-right: 1em;
+  }
   p {
     color: #4d4c4c;
-    font-size: 19px;
-    line-height: 15px;
+    font-size: 1.375rem;
+    line-height: 1.5rem;
     letter-spacing: 2%;
+    margin-left: 0.6em;
   }
 `;
-export const ProductShortDescriptions = styled.p`
-  max-width: 340px;
-  font-size: 16px;
-  word-break: break-word;
-  font-weight: 300;
-  margin: 1rem 0;
-  letter-spacing: 0.03em;
-  line-height: 160%;
+// export const ProductShortDescriptions = styled.p`
+//   max-width: 340px;
+//   font-size: 16px;
+//   word-break: break-word;
+//   font-weight: 300;
+//   margin: 1rem 0;
+//   letter-spacing: 0.03em;
+//   line-height: 160%;
+// `;
+export const SkuTable = styled.div`
+  font-size: 1.56rem;
+  margin: 0.8em 0;
+  b {
+    font-weight: bold;
+    margin-right: 0.5em;
+    line-height: 1.5;
+  }
 `;
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -115,15 +143,7 @@ export const CategorySelector = styled(Row)`
     font-weight: 700;
     margin-right: 0.8rem;
   }
-  /* .flavour-select {
-    min-width: 260px;
-    max-width: 350px;
-    border: 1px solid #d4cdcd;
-    border-radius: 7px;
-    height: 41px;
-    padding: 0 0.5rem;
-    background: white;
-  } */
+
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -136,16 +156,15 @@ export const PriceBox = styled(Row)`
   align-items: flex-end;
   margin: 1rem 0;
   span {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #656363;
     text-decoration: line-through;
     font-weight: 500;
+    margin-right: 0.6em;
   }
   h6 {
-    font-size: 49px;
-    color: #df363e;
+    font-size: 3.062rem;
     font-weight: 700;
-    margin-left: 0.8rem;
   }
   @media only screen and (max-width: 768px) {
     span {
@@ -159,14 +178,35 @@ export const PriceBox = styled(Row)`
 
 export const QuantitySection = styled(Row)`
   h6 {
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 1.563rem;
+  }
+  margin: 0.8em 0;
+  .lightBlue,
+  .lightGreen {
+    width: 2.135em;
+    height: 2.135em;
+    border-radius: 0.8rem;
+    background: #5e98c1;
+    margin: 0 0.4em;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:focus {
+      border: 2px solid black;
+    }
+  }
+  .lightGreen {
+    background: #5ec192;
   }
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     /* align-items: ; */
     h6 {
-      margin: 2rem 0;
+      margin: 1em 0;
     }
   }
   /* margin: 1rem 0; */
@@ -207,85 +247,46 @@ export const QuantityBox = styled(Row)`
 
 export const BtnsSection = styled(Row)`
   margin: 3rem 0;
-  Button {
-    display: grid;
-    place-items: center;
+  button {
+    padding: 0.92em 2.58em;
+    margin-right: 2em;
+    font-size: 1.56rem;
     font-weight: 700;
-    font-size: 25px;
-    color: white;
-    background: #ffc403;
-    border-radius: 40px;
-    height: 89px;
-    width: 378px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s;
-    &:hover {
-      opacity: 0.8;
-      letter-spacing: 1px;
-    }
   }
-  span {
-    display: grid;
-    place-items: center;
-    font-size: 25px;
-    border-radius: 50%;
-    width: 65px;
-    height: 65px;
-    background: #ff2849;
-    color: white;
-    margin-left: 2rem;
-    transition: 0.4s;
-    &:hover {
-      opacity: 0.7;
-      cursor: pointer;
-      font-size: 30px;
-    }
-  }
+
   @media (max-width: 768px) {
     button {
-      width: 268px;
-      border-radius: 30px;
-      height: 65px;
+      padding: 0.9em 1.6em;
+      font-size: 1.3rem;
     }
-  }
-`;
-
-export const SkuBox = styled.div`
-  font-size: 26px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: black;
-  margin-bottom: 2rem;
-  @media only screen and (max-width: 768px) {
-    font-size: 23px;
   }
 `;
 
 export const TabsContainer = styled(Row)`
   width: 100%;
-  margin: 1rem;
+  margin: 4em;
   color: black;
   border-color: black;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   .tab {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 1rem;
     cursor: pointer;
     min-width: max-content;
+    text-transform: uppercase;
+    padding: 0.8em 0;
+    font-size: 1.437rem;
+    transition: 0.4s;
+    &:hover {
+      background: #f6f6f6;
+    }
     h6 {
-      font-size: 35px;
-      font-weight: 400;
-      transition: 0.4s;
+      padding: 0 1.5em;
+      font-size: 1.437rem;
+      font-weight: 600;
       color: black;
-      &:hover {
-        color: #df363e;
-      }
     }
     span {
       background: #df363e;
@@ -296,10 +297,13 @@ export const TabsContainer = styled(Row)`
     }
   }
   @media only screen and (max-width: 768px) {
+    flex-direction: column;
     .tab h6 {
       font-size: 21px;
       font-weight: 500;
       text-align: center;
+      margin: 0.5em 0;
+      border: none !important;
     }
   }
 `;
@@ -308,8 +312,10 @@ export const FullDescriptionBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2em 1em;
   font-size: 25px;
+  background: #f6f6f6;
+  margin-bottom: 4em;
   @media only screen and (max-width: 768px) {
     font-size: 16px;
   }

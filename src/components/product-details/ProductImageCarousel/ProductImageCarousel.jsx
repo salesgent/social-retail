@@ -6,11 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 ////////////////////////////////////////////////////////////////
 import styles from "./carousel.module.scss";
 
-// // // Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+
 
 // import Swiper core and required modules
 import SwiperCore, { FreeMode, Navigation, Thumbs, Controller } from "swiper";
@@ -45,7 +41,6 @@ const ProductImgCarousel = ({ images }) => {
         {images.map((image, I) => (
           <SwiperSlide key={I}>
             <div className={styles.img}>
-              {console.log(image)}
               <Image
                 src={
                   image && image !== "null"
@@ -53,10 +48,11 @@ const ProductImgCarousel = ({ images }) => {
                     : "/images/product-imgnotfound.png"
                 }
                 alt="product full image"
-                layout="responsive"
+                // layout="responsive"
                 blurDataURL="/images/product-imgnotfound.png"
-                width={459}
-                height={550}
+                // width={459}
+                // height={550}
+                layout="fill"
                 placeholder="blur"
               />
             </div>

@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 const Container = styled(Stack)`
   width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
   height: 11.44rem;
   background: ${(props) => props.theme.palette.bg.secondary};
   @media only screen and (max-width: 768px) {

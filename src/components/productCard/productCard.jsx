@@ -14,7 +14,7 @@ import {
   ProductPrice,
 } from "./productCard.style";
 
-const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
+const CommonProductCard = ({ product }) => {
   const [rating, setrating] = useState(4);
   const Router = useRouter();
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
   const localCartData = useSelector((state) => state.cart.localCartData);
 
   ////////add to cart func
-  const LocalAddToCart = () => {
+  const addToCart = () => {
     localAddToCart([{ ...product, quantity: 1 }], localCartData)(dispatch);
   };
 
@@ -30,7 +30,11 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
     <ProductCard className="product-card">
       <ImageBox>
         <Image
-          src={product.img}
+          src={
+            product.imageUrl && product.imageUrl !== "null"
+              ? product.imageUrl
+              : "/images/product-imgnotfound.png"
+          }
           alt={product.productName}
           layout="fill"
           placeholder="blur"
@@ -38,12 +42,14 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
         />
       </ImageBox>
       <ProductContent>
-        <span className="title">{product.title}</span>
+        <span className="title">
+          {product?.title || "Mya bambino gold social"}
+        </span>
         <ProductName>{product.productName}</ProductName>
         <div>
           <Rating
             value={rating}
-            onChange={(e) => setrating(e.value)}
+            // onChange={(e) => setrating(e.value)}
             readonly={true}
             size="medium"
           />
@@ -59,7 +65,11 @@ const CommonProductCard = ({ product, selectedId, setSelectedId }) => {
             <p>${product.standardPrice?.toFixed(2)}</p>
           </ProductPrice>
         )}
-        <ProductButton>shop now</ProductButton>
+        {product?.hasChildProduct === true ? (
+          <ProductButton>shop now</ProductButton>
+        ) : (
+          <ProductButton onClick={() => addToCart()}>add to cart</ProductButton>
+        )}
       </ProductContent>
     </ProductCard>
   );

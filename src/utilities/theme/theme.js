@@ -32,8 +32,8 @@ const theme = {
   },
   maxWidth: {
     home: "1680px",
-    productslist: "1710px",
-    productDetails: "1710px",
+    productslist: "1580px",
+    productDetails: "1580px",
   },
 };
 

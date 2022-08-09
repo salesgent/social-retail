@@ -42,7 +42,8 @@ export const NavHeader = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 1rem 0;
-  font-size: 17px;
+  font-size: 1.313rem;
+  margin-left: 1em;
   color: black;
   font-weight: 400;
   text-transform: uppercase;
@@ -58,10 +59,13 @@ export const NavHeader = styled.div`
     }
   }
   span {
-    color: #ef7922;
     margin: 0 0.6rem;
     display: grid;
+    width: 1rem;
     place-items: center;
+    width: 1rem;
+    height: 1px;
+    background: black;
   }
   @media only screen and (max-width: 1720px) {
     padding: 1rem;
@@ -72,24 +76,20 @@ export const NavHeader = styled.div`
 `;
 export const ProductsContainer = styled.div`
   width: 100%;
+  max-width: ${(props) => props.theme.maxWidth.productslist};
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: white;
+  margin-top: 1.6em;
 `;
 export const ProductsGrid = styled.div`
-  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1.4rem;
-  max-width: ${(props) => props.theme.maxWidth.productslist};
-  padding: 4rem 0;
-  /* grid-column-gap: 1rem; */
+  padding: 3rem 0;
   grid-row-gap: 76px;
-  @media only screen and (max-width: 1462px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  margin-bottom: 4em;
   @media only screen and (max-width: 946px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -111,6 +111,7 @@ export const ProductsNotFound = styled.div`
   margin: 3rem 0;
   margin-bottom: 25vh;
   background: #ef7922;
+  background: #ffc403;
   color: white;
   @media only screen and (max-width: 946px) {
     height: 80px;

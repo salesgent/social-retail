@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 export const ProductCard = styled.div`
-  max-width: 571px;
-  max-height: 276px;
+  max-width: 35.685rem;
+  max-height: 17.46rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -31,10 +31,15 @@ export const ProductContent = styled.div`
   height: 100%;
   padding: 1em;
   padding-right: 0;
+  max-width: 60%;
+  margin-right: ${(props) => props.marginRight};
   .title {
     font-size: 1.05rem;
     font-weight: 500;
     line-height: 100%;
+  }
+  @media screen and (max-width: 1635px) {
+    margin-right: 0;
   }
 `;
 
@@ -46,7 +51,8 @@ export const ProductName = styled.h4`
   margin-top: 0.3rem;
   letter-spacing: 0.02em;
   line-height: 2.1rem;
-  max-height: 4.3rem;
+  min-height: 4.295rem;
+  max-height: 4.32rem;
   overflow: hidden;
   text-overflow: ellipsis;
   @media screen and (max-width: 640px) {
@@ -80,8 +86,7 @@ export const ProductPrice = styled.div`
 export const Button = styled(motion.button)`
   border: none;
   background: #ffc403;
-  width: 7.56rem;
-  height: 2.37rem;
+  padding: 0.6em 1em;
   border-radius: 2.5rem;
   text-transform: uppercase;
   color: white;
@@ -103,6 +108,7 @@ export const ProductButton = ({ children, ...props }) => {
   return (
     <Button
       whileHover={{ scale: 1.1 }}
+      whilteTap={{ scale: 1.1 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       {...props}
     >
